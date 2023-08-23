@@ -12,7 +12,7 @@ public class Exec19 {
         float altura = scan.nextFloat();
 
         float paredes_compridas = (comprimento * altura) * 2;
-        float paredes_largas = (comprimento * altura) * 2;
+        float paredes_largas = (largura * altura) * 2;
 
         float tijolos = (paredes_compridas + paredes_largas) / 1.5f;
 
