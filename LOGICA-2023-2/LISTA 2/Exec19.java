@@ -15,8 +15,11 @@ public class Exec19 {
         float paredes_largas = (largura * altura) * 2;
 
         float tijolos = (paredes_compridas + paredes_largas) / 1.5f;
+        if (tijolos % 1.5f != 0) {
+            tijolos = tijolos + 1;
+        }
 
-        System.out.printf("SERA NECESSÁRIO NO MINIMO %.2f CAIXAS DE AZULEJO %n", tijolos);
+        System.out.printf("SERA NECESSÁRIO NO MINIMO %i CAIXAS DE AZULEJO %n", (int)tijolos);
     }
 }
 
