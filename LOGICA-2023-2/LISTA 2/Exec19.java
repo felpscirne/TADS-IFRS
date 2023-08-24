@@ -19,7 +19,7 @@ public class Exec19 {
             tijolos = tijolos + 1;
         }
 
-        System.out.printf("SERA NECESSÁRIO NO MINIMO %i CAIXAS DE AZULEJO %n", (int)tijolos);
+        System.out.printf("SERA NECESSÁRIO NO MINIMO %.0f CAIXAS DE AZULEJO %n", tijolos);
     }
 }
 
