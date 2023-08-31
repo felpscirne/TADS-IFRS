@@ -31,15 +31,14 @@ public class Triangulo {
         
         if (hipotenusa < menorA + menorB) {
         
-            if ((hipotenusa == menorA) || (menorA == menorB) || (hipotenusa == menorB)){
-                System.out.println("ISÓSCELES");
+            if ((hipotenusa == menorA) || (menorA == menorB) || (hipotenusa == menorB)){  
                 triangulo = "ISOSCELES";
             }else{
-            System.out.println("ESCALENO");
-            triangulo = "ESCALENO";
+                triangulo = "ESCALENO";
         
             if (triangulo == "ISOSCELES" || triangulo == "ESCALENO"){  
                 if (hipotenusa * hipotenusa == menorA * menorA + menorB *menorB){
+                    System.out.println(triangulo);
                     System.out.println("RETANGULO");
                 }    
             }else{
