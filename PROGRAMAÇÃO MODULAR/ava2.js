@@ -70,7 +70,7 @@ function union(array1,array2,array3) {
 }
 function unique(array) {
     var resp = []
-    for (let i = 0; i < array.length; i++) {
+    for (var i = 0; i < array.length; i++) {
         if (inn(resp, array[i])){
             
         } else              
@@ -79,15 +79,35 @@ function unique(array) {
     }
     return resp
     
-        }
+}
             
 
-function intersection() {
-
+function intersection(array1,array2) {
+    var resp = []
+        for (var i=0; i < array1.length; i++){
+            if (inn(array2, array1[i]))
+                if (inn(resp,array1[i]) === false)
+                    resp.push(array1[i])
+   }
+   return resp
 }
-function difference() {
 
-}
+    
+function difference(array1,array2) {
+    var resp = []
+    for (var i=0; i < array1.length; i++){
+        if (inn(array2, array1[i]) === false)
+            // if (inn(resp,array1[i]))
+            resp.push(array1[i])
+    }
+            for (var i=0; i < array2.length; i++){
+        if (inn(array1, array2[i]) === false)
+                    // if (inn(resp,array1[i]))
+            resp.push(array2[i])
+    }
+    return resp
+        }
+
 function zip() {
     
 }
