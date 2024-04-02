@@ -101,19 +101,54 @@ function difference(array1,array2) {
             resp.push(array1[i])
     }
             for (var i=0; i < array2.length; i++){
-        if (inn(array1, array2[i]) === false)
-                    // if (inn(resp,array1[i]))
-            resp.push(array2[i])
+        if (inn(array1, array2[i]) === false) resp.push(array2[i])
     }
     return resp
         }
 
-function zip() {
-    
+function zip(array1, array2) {
+    var resp = []
+
+    if (array2 === undefined){ 
+        for (var i=0; i < array1.length; i++){
+            resp.push([array1[i]])
+        }
+        return resp
+    }
+    for (var i=0; i < array1.length; i++){
+        resp.push([array1[i], array2[i]])
+    }
+    return resp
 }
-function compact() {}
-function flatten() {}
-function equals() {}
+function compact(array1) {
+    var resp = []
+    for (var i=0; i < array1.length; i++){
+        if (array1[i] === null || array1[i] === undefined || array1[i] === 0 || isNaN(array1[i])){
+        } else resp.push(array1[i])
+    }
+    return resp
+}
+function flatten(array1, depth = 1) {
+    var resp = []
+    for (var i=0; i < array1.length; i++){
+        if (Array.isArray(array1[i]) && depth > 0){
+            var temp = flatten(array1[i], depth - 1)
+            for (var j=0; j < temp.length; j++){
+                resp.push(temp[j])
+            }
+        } else resp.push(array1[i])
+    }
+    return resp
+}
+function equals(array1, array2) {
+    if (array1.length !== array2.length) return false
+    for (var i=0; i < array1.length; i++){
+        if (Array.isArray(array1[i]) && Array.isArray(array2[i])){
+            if (equals(array1[i], array2[i]) === false) return false
+        } else if (array1[i] !== array2[i]) return false
+    }
+    return true
+}
 
 console.log(first(array1)) // 12
 console.log(first(array1, 3)) // [12, 34, 56]
