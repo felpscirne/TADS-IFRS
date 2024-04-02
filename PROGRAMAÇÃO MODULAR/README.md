@@ -1,3 +1,3 @@
 # Programaçao Modular
 
- Criando uma função que calcule MMC sem utilizar Math
+Atividades desenvolvidas para a disciplina de "PROGRAMAÇÃO MODULAR", do 2° semestre de Analise e Desenvolvimento de Sistemas do IFRS- Campus Rio Grande
