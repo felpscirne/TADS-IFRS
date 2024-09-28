@@ -70,7 +70,7 @@ public class Main{
         // bd.removerPessoa("João");
         // bd.exibirPessoas();
 
-        bd.procurar("a").forEach(pessoa -> pessoa.exibirInformacoes());
+        bd.procurar("A").forEach(pessoa -> pessoa.exibirInformacoes());
 
     }
 }
