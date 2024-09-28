@@ -10,16 +10,29 @@ public class BancoDeDadosSimples {
     }
 
     public void adicionarPessoa(Pessoa pessoa){
-        this.pessoas.add(pessoa);
+    if(this.pessoas.contains(pessoa)){
+        System.out.println("Pessoa já cadastrada!");
+    }
+    else{this.pessoas.add(pessoa);}
     }
 
     public void removerPessoa(String nome){
-        pessoas.removeIf(pessoa -> pessoa.getNome().equals(nome));
+        this.pessoas.removeIf(pessoa -> pessoa.getNome().equals(nome));
     }
 
     public void exibirPessoas(){
         for(Pessoa pessoa : this.pessoas){
             pessoa.exibirInformacoes();
         }
+    }
+
+    public List<Pessoa> procurar(String parteNome){
+        List<Pessoa> pessoasEncontradas = new ArrayList<>();
+        for(Pessoa pessoa : this.pessoas){
+            if(pessoa.getNome().contains(parteNome.toUpperCase())){
+                pessoasEncontradas.add(pessoa);
+            }
+        }
+        return pessoasEncontradas;
     }
 }

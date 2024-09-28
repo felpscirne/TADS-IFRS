@@ -13,6 +13,7 @@ public class Pessoa {
         System.out.println("Nome: " + nome);
         System.out.println("Idade: " + idade);
         System.out.println("Altura: " + altura);
+        System.out.println("--------------------");
     }
 
     public void alterarIdade(int idade) {
