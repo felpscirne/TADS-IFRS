@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* padrão 1rem = 16px, pode ser alterado com font-size no root */
+      /* ao mudar o font-size do root o rem muda */
+      :root { 
+        box-sizing: border-box;
+      }
+      .container {
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: clamp(375px, 95vw, 1000px);
+        
+      }
+      /* regras aplicadas aos filhos imediatos do container */
+      .container > * {
+        border: 2px solid tomato;
+        padding: 4px;
+      }
+
+      header {
+        font-size: 4rem;
+      }
+      
+
+      nav ul {
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+      }
+      nav a {
+        text-decoration: none;
+      }
+      main {
+        
+      }
+      footer {
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>The Header</header>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="">Nav 1</a></li>
+          <li><a href="">Nav 2</a></li>
+          <li><a href="">Nav 3</a></li>
+        </ul>
+      </nav>
+      <main>
+        <h1>Lorem ipsum</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at
+          tristique lorem. Class aptent taciti sociosqu ad litora torquent per
+          conubia nostra, per inceptos himenaeos. Vestibulum ante ipsum primis
+          in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus
+          fringilla eu mauris a faucibus.
+        </p>
+      </main>
+      <aside>Sidebar</aside>
+      <footer>Rodapé com letras miúdas</footer>
+    </div>
+  </body>
+</html>

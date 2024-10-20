@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            
+            border: 0.5vw blue solid;
+            margin: auto;
+            width: 70vw;
+            height: 30vw;
+            /* define o div como container flex*/
+            display: flex;
+
+            /* define a direção e se terá quebra de linha
+            shorthand para: 
+            flex-direction: row;
+            flex-wrap: wrap;        */
+            flex-flow: row wrap; 
+
+            /* define a distribuição dos demais elementos no espaço que sobra */
+            justify-content: flex-start;
+
+            align-items: center;
+
+            align-content: flex-end;
+
+            gap: 0.5vw;
+        }
+
+        .item {
+
+            border: 0.2vw red solid;
+            width: 15vw;
+            height: 10vw;
+        }
+        .itemB {
+
+        border: 0.2vw red solid;
+        width: 10vw;
+        height: 8vw;
+        }
+
+    </style>
+    <div class="container">
+        <div class="item"></div>
+        <div class="itemB"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="itemB"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #d9b3d1;
+    --background-color: #0000006e;
+    --background-varient: #000000c7;
+}
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background-image: url("../img/bg3.jpg");
+    color:var(--secondary-color);
+    
+}
+.navbar {
+    background-color: var(--primary-color); /* Cor de fundo do menu */
+}
+
+.navbar .navbar-brand,
+.navbar .nav-item .nav-link  {
+    color: var(--secondary-color); 
+}
+
+#section1 {
+    background-color: var(--background-varient);
+    text-align: center;
+}
+.dado-img {
+        width: 100px; /* Defina o tamanho do dado */
+        transition: transform 1s ease; /* Suaviza a transição do movimento */
+}
+    
+.dado-img:hover {
+    transform: rotate(360deg); /* Faz o dado "rolar" em um giro completo */
+}
+
+
+#section2{
+    background-color: var(--background-varient);
+    padding: 20px;
+    /* margin-bottom: 20px; */
+}
+.card {
+    background-color: var(--background-varient);
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 500px; 
+    object-fit: cover;
+    object-position: center;
+}
+.modal-header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+.modal-body {
+    background-color: var(--background-varient);    
+    }
+
+#section3 {
+    background-color: var(--background-varient);
+    /* padding: 20px;
+    margin-bottom: 20px; */
+    color: var(--secondary-color);
+}
+.table-custom td, .table-custom th {
+    background-color: var(--primary-color);
+    color: var(--secondary-color); 
+}
+
+
+footer {
+    /* background-color: #222; */
+    /* color: white; */
+}
+

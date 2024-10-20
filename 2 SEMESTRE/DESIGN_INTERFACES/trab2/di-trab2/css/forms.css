@@ -1,0 +1,27 @@
+@import url('./style.css');
+
+form {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  form label {
+    display: flex;
+    padding: 2%;
+    margin: 2%;
+  }
+  
+  form input, form textarea {
+    margin-left: 10px;
+    padding: 5px;
+  }
+  form button {
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: white 1px solid;
+    border-radius: 5px;
+  }

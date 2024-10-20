@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Add Div</title>
+</head>
+<body>
+    <button id="envia">Enviar</button>  
+    <div id="campos" >
+    </div>
+    <script>
+        document.querySelector("#envia").addEventListener("click",imprime);
+        function imprime() {
+            let campos = document.querySelector("#campos");    
+            let div= document.createElement("div");
+            campos.appendChild(div);
+            campos.querySelector("div:last-of-type").style=`border:4px red solid;                                              width:100px;                                              height:100px`;
+        }  
+    </script>
+</body>
+</html>

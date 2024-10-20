@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <title>DOM </title>
+    </head>
+<body>
+    
+<input type="button" id="b2" value="Alterar" />
+<script type="text/javascript">
+
+function altera()
+{
+let ol = document.createElement("ol");
+ol.setAttribute("type","A"); 
+let li1= document.createElement("li"); 
+let t1= document.createTextNode("UM"); 
+let li2= document.createElement("li"); 
+let t2= document.createTextNode("DOIS");
+let li3= document.createElement("li"); 
+let t3= document.createTextNode("TRES");          
+li1.appendChild(t1); 
+li2.appendChild(t2);
+li3.appendChild(t3);        
+ol.appendChild(li1); 
+ol.appendChild(li2);
+ol.appendChild(li3);                             
+document.querySelector("body").appendChild(ol);
+}
+
+document.querySelector("#b2").addEventListener("click", altera);
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * { 
+        box-sizing: border-box; 
+        margin: 0; 
+        padding: 0;
+        border:0;
+      }
+              /* Tela Grande */
+      .navigation {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        padding:16px;
+        list-style: none;
+        background: deepskyblue;
+      }
+      .navigation li{
+        padding: 20px;
+      }
+      .navigation a {
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: white;
+      }
+      
+      /* Telas de tamanho médio */
+      @media (max-width: 900px) {
+        .navigation {
+            justify-content: space-around;
+        }
+      }
+      
+      /* Telas pequenas */
+      @media (max-width: 600px) {
+        .navigation {
+           flex-direction: column;
+        }
+      }
+      
+      
+      
+          </style>
+</head>
+<body>
+    
+
+<ul class="navigation">
+    <li><a href="#">Principal</a></li>
+    <li><a href="#">Sobre</a></li>
+    <li><a href="#">Produtos</a></li>
+    <li><a href="#">Contato</a></li>
+</ul>
+
+</html>

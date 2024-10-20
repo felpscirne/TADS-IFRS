@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <title>DOM </title>
+    </head>
+<body>
+    <p id="p1">Hello world!</p>
+    <input type="button" id="b2" value="Alterar" />
+    <script type="text/javascript">
+    document.querySelector("#b2").addEventListener("click", altera);
+    function altera()
+    {
+       document.querySelector("#p1").style.color="blue";
+    // document.querySelector("#p1").style="color:blue;"
+    // document.querySelector("#p1").style=`color:blue; 
+    //                                      font-family:Arial;
+    //                                      border:5px dotted red;`
+    
+    
+   
+    }
+    </script>
+    </body>
+</html>

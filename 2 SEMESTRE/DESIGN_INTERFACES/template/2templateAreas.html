@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+  * { box-sizing: border-box; }
+/** Telas pequenas - o padrão**/
+
+.container {
+    display: grid;
+    gap: 10px;
+    padding:10px;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "propaganda"
+      "footer";
+}
+
+ /* este seletor seleciona todos filhos diretos do container*/
+.container > * {
+    border: 2px solid tomato;
+    padding:5px;
+}
+
+header {
+  grid-area: header;
+  
+}
+main {
+  grid-area: main;
+}
+nav {
+  grid-area: nav;
+  
+}
+nav ul{
+    list-style: none;
+    padding:0px;
+}
+nav li{ 
+    padding:6px;   
+}
+nav a{
+    text-decoration: none;
+}
+aside {
+  grid-area: aside;
+}
+.propaganda {
+  grid-area: propaganda;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* telas intermediarias */
+@media (min-width: 600px) {
+  .container {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "header     header"
+      "nav        nav"
+      "aside      main"
+      "propaganda footer";
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
+
+/* telas grandes */
+@media (min-width: 800px) {
+  .container {
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+      "header header  header"
+      "nav    main    aside"
+      "nav    main    propaganda"
+      "footer footer  footer"
+   }
+   nav ul {
+     flex-direction: column;
+   }
+}
+
+
+</style>
+</head>
+<body>
+    
+  <div class="container">
+    <header>The Header</header>
+    <nav>
+      <ul>
+        <li><a href="">Nav 1</a></li>
+        <li><a href="">Nav 2</a></li>
+        <li><a href="">Nav 3</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Lorem ipsum</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at tristique lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus fringilla eu mauris a faucibus.</p>
+    </main>
+    <aside>Aside</aside>
+    <div class="propaganda">Propaganda</div>
+    <footer>The footer</footer>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+@import url('./geral.css');
+
+main ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 10px;
+
+    list-style: none;
+    margin: 0;
+    
+  }
+
+  main li {
+    border: var(--cor-destaque) 1px dotted;
+    border-radius: 5px;
+  }
+
+  main img{ 
+    width:100%;
+    max-width:80px;
+}
+

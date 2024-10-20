@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Alunos</title>
+</head>
+<body>
+  
+    <label for="alunos">Quer cadastrar quantos alunos? </label>
+    <input type="number" id="alunos">
+    <button id="envia">Enviar</button>
+    
+    <div id="cadastro">
+    </div>
+
+    <script>
+        document.querySelector("#envia").addEventListener("click",imprime);
+        function imprime() {
+            console.log("ola");
+            let campos = document.querySelector("#cadastro");
+            let quant = document.querySelector("#alunos").value;
+
+            for (let i = 0; i < quant; i++) {
+                let rotulo= document.createElement("label");
+                rotulo.setAttribute("for","al"+ i);
+                let texto = document.createTextNode("Aluno " + i + ": ");
+                rotulo.appendChild(texto);
+                campos.appendChild(rotulo);
+
+                let caixa = document.createElement("input");
+                caixa.setAttribute("type","text");
+                caixa.setAttribute("id","al"+ i);
+                campos.appendChild(caixa);
+
+                let ln = document.createElement("br");
+                campos.appendChild(ln);
+            }
+        }
+    </script>
+</body>
+</html>

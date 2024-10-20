@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #barra{
+            width:50px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+        #painel{
+            width:150px;
+            height:220px;
+            border:2px solid blue;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="painel">
+        <div id="barra"></div>
+    </div>
+    <br>
+    <input
+  type="range"
+  id="controle"
+  min="10"
+  max="200"
+  step="5"
+  value="100" />
+
+  <script>
+function mudaAltura(){
+    barra.style.height = `${controle.value}px`;
+    // barra.innerHTML = `${controle.value}`;
+  }
+
+// Main
+const controle=document.querySelector("#controle");
+const barra=document.querySelector("#barra");
+
+controle.addEventListener("input",mudaAltura);
+
+    
+    </script>
+</body>
+</html>

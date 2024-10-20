@@ -1,0 +1,34 @@
+<html>
+<head></head>
+<body>
+<form>
+<input type="button" id="dispara" value="Display timed alertbox!" />
+<input type="button" id="para" value="Parar" />
+</form>
+<div id="campos">
+</div>
+
+<script>
+    let campos = document.querySelector("#campos");
+    
+    function imprime() {     
+            let div= document.createElement("div");
+            campos.appendChild(div);
+            campos.querySelector("div:last-of-type").style=`border:4px red solid; width:30px; height:30px`;
+        } 
+    function timedMsg()
+    {
+        t=setInterval("imprime()",2000);
+        document.querySelector('#dispara').removeEventListener('click',timedMsg);
+    }
+    function parar(){
+        clearInterval(t);
+    }
+    
+    document.querySelector('#dispara').addEventListener('click',timedMsg);
+    document.querySelector('#para').addEventListener('click',parar);
+    
+</script>
+
+</body>
+</html> 

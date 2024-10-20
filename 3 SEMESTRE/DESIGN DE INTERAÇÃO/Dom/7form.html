@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form id="formulario" method="post" action="teste.php">
+        <label for="name">Nome:</label>
+        <input type="text" id="nome" name="nome"><br>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" ><br>
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" ><br>
+        <input type="submit" value="Enviar">
+    </form>
+  <div id="erro"></div>
+</body>
+<script>
+//variáveis globais
+let formulario = document.querySelector("#formulario");
+let erro = document.querySelector("#erro");
+let count=0;
+let nome = document.querySelector("#nome");
+let cpf = document.querySelector("#cpf");
+let idade = document.querySelector("#idade");
+
+formulario.addEventListener("submit", (e)=>{verifica(e)});
+
+function verifica(e){
+    //apaga as mensagens de erro
+    if (document.querySelector("#erroNome") != null) {
+        document.querySelector("#erroNome").remove();
+        nome.style.borderColor = "black";
+        
+    }
+    if (document.querySelector("#erroCpf") != null) {
+        document.querySelector("#erroCpf").remove();
+        cpf.style.borderColor = "black";
+    }
+    if (document.querySelector("#erroIdade") != null) {
+        document.querySelector("#erroIdade").remove();
+        idade.style.borderColor = "black"; 
+    }
+
+    //Chama os testes
+    count=0;
+    vNome(e);
+    vCpf(e);
+    vIdade(e);
+    if ( count==0 )
+    {   alert("O formulario será enviado");
+    }
+    else
+    {
+        e.preventDefault();
+    }
+}
+
+
+function vNome(e) {
+    
+    if (nome.value == "") {
+            let erroDiv = document.createElement("div");
+            erroDiv.setAttribute("id","erroNome");
+            let erroTexto = document.createTextNode("Preencha o campo nome.");
+            erroDiv.appendChild(erroTexto);
+            erro.appendChild(erroDiv);
+            let ln = document.createElement("br");
+            erro.appendChild(ln);
+            nome.style.borderColor = "red";
+            nome.focus();
+            count++;
+    }
+}
+function vCpf(e) {
+    
+    if (cpf.value == "" || cpf.value.length != 11) {
+        
+            let erroDiv = document.createElement("div");
+            erroDiv.setAttribute("id","erroCpf");
+            let erroTexto = document.createTextNode("O campo cpf deve ter 11 caracteres.");
+            erroDiv.appendChild(erroTexto);
+            erro.appendChild(erroDiv);
+            let ln = document.createElement("br");
+            erro.appendChild(ln);
+            cpf.style.borderColor = "red";
+            cpf.focus();
+            count++;
+        }
+    }
+function vIdade(e) {
+    
+    if (idade.value == "" || idade.value < 0 || idade.value > 100) {
+        
+                let erroDiv = document.createElement("div");
+                erroDiv.setAttribute("id","erroIdade");
+                let erroTexto = document.createTextNode("A idade deve estar entre 0 e 100.");
+                erroDiv.appendChild(erroTexto);
+                erro.appendChild(erroDiv);
+                let ln = document.createElement("br");
+                erro.appendChild(ln);
+                idade.style.borderColor = "red";
+                idade.focus();
+                count++;
+        }  
+    }
+</script>
+</html>

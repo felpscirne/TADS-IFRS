@@ -1,0 +1,30 @@
+@import url('./style.css');
+
+ul li {
+  list-style: none;
+}  
+
+main ul li figure{
+    flex-direction: column;
+    text-align: center;
+}
+
+main img {
+    width: 100%;
+    max-width: 200px;
+    align-self: center;
+}
+
+main p {
+    background-color: rgba(128, 128, 128, 0.383);
+    border-style: inset;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+
+main ul li figure figcaption {
+    width: 100%;
+    text-align:center;
+}
+
