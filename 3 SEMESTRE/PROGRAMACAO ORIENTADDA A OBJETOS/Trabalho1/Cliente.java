@@ -21,8 +21,32 @@ public class Cliente {
         return nome;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
     public List<Reserva> getReservas() {
         return reservas;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setReservas(List<Reserva> reservas) {
+        this.reservas = reservas;
     }
 
 // Método que adiciona uma reserva à lista de reservas do cliente e a confirma

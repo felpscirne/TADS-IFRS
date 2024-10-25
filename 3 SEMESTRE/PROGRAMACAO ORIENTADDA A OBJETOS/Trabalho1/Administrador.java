@@ -22,6 +22,14 @@ public class Administrador {
         return id;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     // Método que adiciona um hotel à lista de hoteis
     public void adicionarHotel(List<Hotel> hoteis) {

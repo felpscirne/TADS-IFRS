@@ -11,7 +11,7 @@ public class Hotel{
     public Hotel(String nome, String endereco){
         this.nome = nome;
         this.endereco = endereco;
-        this.listadequartos = new ArrayList<Quarto>();
+        this.listaDeQuartos = new ArrayList<Quarto>();
     }
 
     public String getNome(){
@@ -22,7 +22,31 @@ public class Hotel{
         return endereco;
     }
 
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    public void setEndereco(String endereco){
+        this.endereco = endereco;
+    }
+
+    // Método que adiciona um quarto à lista de quartos do hotel
+    public void adicionarQuarto(Quarto quarto){
+        listaDeQuartos.add(quarto);
+    }
     
+    public void listarQuartosDisponiveis(){
+        for (Quarto quarto : listaDeQuartos) {
+            if (quarto.isDisponivel()){
+                System.out.println(quarto.toString());
+            }
+        }
+    }
+
+    @Override
+    public String toString(){
+        return "Nome: " + nome + "\nEndereço: " + endereco;
+    }
 
 }
 
