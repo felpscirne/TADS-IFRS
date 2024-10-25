@@ -15,7 +15,7 @@ public class Administrador {
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public int getId() {
@@ -44,7 +44,7 @@ public class Administrador {
         System.out.println("Digite o endereço do hotel: ");
         String endereco = scanner.nextLine();
 
-        Hotel hotel = new Hotel(nome, endereco); // Cria um novo hotel
+        Hotel hotel = new Hotel(nomeHotel, endereco); // Cria um novo hotel
         hoteis.add(hotel); // Adiciona o hotel à lista de hoteis
         System.out.println("Hotel cadastrado com sucesso.");
     }
@@ -75,4 +75,6 @@ public class Administrador {
         hoteis.remove(hotel);
         System.out.println("Hotel removido com sucesso.");
     }
+    
+    
 }

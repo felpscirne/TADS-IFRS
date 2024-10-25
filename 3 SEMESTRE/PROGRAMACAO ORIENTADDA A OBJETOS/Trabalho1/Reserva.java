@@ -1,26 +1,27 @@
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Reserva {
 
-    private String cliente;
-    private String quarto;
+    private Cliente cliente;
+    private Quarto quarto;
     private LocalDate dataCheckIn;
     private LocalDate dataCheckOut;
 
 // Construtor da reserva, que recebe o cliente, o quarto, a data de check-in e a data de check-out
-    public Reserva(String cliente, String quarto, LocalDate dataCheckIn, LocalDate dataCheckOut) {
+    public Reserva(Cliente cliente, Quarto quarto, LocalDate dataCheckIn, LocalDate dataCheckOut) {
         this.cliente = cliente;
         this.quarto = quarto;
         this.dataCheckIn = dataCheckIn;
         this.dataCheckOut = dataCheckOut;
     }
 
-    public String getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
-    public String getQuarto() {
+    public Quarto getQuarto() {
         return quarto;
     }
 
@@ -40,25 +41,27 @@ public class Reserva {
         }else if (dataCheckOut.isBefore(dataCheckIn)) {
             System.out.println("Reserva não pode ser confirmada, pois a data de check-out é anterior à data de check-in.");
             return;
-        }else if (dataCheckIn.isEqual(dataCheckOut)) {
-            System.out.println("Reserva não pode ser confirmada, pois a data de check-in é igual à data de check-out.");
-            return;
-        }else if (!quarto.isDisponivel()) {
-            System.out.println("Reserva não pode ser confirmada, pois o quarto não está disponível.");
-            return;
         }else{
-            quarto.reservar();            
-            System.out.println("Reserva confirmada para o cliente " + cliente + " no quarto " + quarto + " de " + dataCheckIn + " a " + dataCheckOut);
+            quarto.reservar();
         }
 
         
         System.out.println("Reserva confirmada para o cliente " + cliente + " no quarto " + quarto + " de " + dataCheckIn + " a " + dataCheckOut);
     }
 
-
 //Método que cancela a reserva de um quarto para um cliente
     public void cancelarReserva(Reserva reserva) {
         quarto.liberar();
-        System.out.println("Reserva cancelada para o cliente " + cliente + " no quarto " + quarto + " de " + dataCheckIn + " a " + dataCheckOut);
     }
+
+//Método que formata a reserva
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String dataCheckInFormatada = dataCheckIn.format(formatter);
+        String dataCheckOutFormatada = dataCheckOut.format(formatter);
+        return "Cliente: " + cliente + "\nQuarto: " + quarto + "\nData de check-in: " + dataCheckInFormatada + "\nData de check-out: " + dataCheckOutFormatada;
+    }
+
+
 }

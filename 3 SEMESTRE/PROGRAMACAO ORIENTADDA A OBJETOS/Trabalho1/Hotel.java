@@ -1,17 +1,17 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Hotel{
     
     private String nome;
     private String endereco;
-    private List<Quarto> listadequartos[];
+    private List<Quarto> listaDeQuartos;
 
     // Construtor do hotel, que recebe nome e endereço e inicializa a lista de quartos
     public Hotel(String nome, String endereco){
         this.nome = nome;
         this.endereco = endereco;
-        this.listaDeQuartos = new ArrayList<Quarto>();
+        this.listaDeQuartos = new ArrayList<>();
     }
 
     public String getNome(){
@@ -20,6 +20,10 @@ public class Hotel{
 
     public String getEndereco(){
         return endereco;
+    }
+
+    public List<Quarto> getListaDeQuartos(){
+        return listaDeQuartos;
     }
 
     public void setNome(String nome){
@@ -45,7 +49,7 @@ public class Hotel{
 
     @Override
     public String toString(){
-        return "Nome: " + nome + "\nEndereço: " + endereco;
+        return "Nome: " + this.nome + "\nEndereço: " + this.endereco;
     }
 
 }

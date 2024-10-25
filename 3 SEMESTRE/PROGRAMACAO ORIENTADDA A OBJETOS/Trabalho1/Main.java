@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        SistemaReservas sistema = new SistemaReservas();
+        SistemaReserva sistema = new SistemaReserva();
         int opcao;
 
         do {

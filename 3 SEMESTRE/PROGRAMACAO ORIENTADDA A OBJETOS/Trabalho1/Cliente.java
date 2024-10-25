@@ -59,6 +59,7 @@ public class Cliente {
     public void cancelarReserva(Reserva reserva) {
         reservas.remove(reserva);
         reserva.cancelarReserva(reserva);
+        System.out.println("Reserva cancelada com sucesso.");
     }
 
 // Método que lista as reservas do cliente, formatando a data
@@ -69,5 +70,7 @@ public class Cliente {
             System.out.println(reserva.toString());
         }
     }
+
+    
 }
 

@@ -4,12 +4,12 @@ import java.math.BigDecimal;
 public class Quarto {
     
     private String numero;
-    private String tipo;
+    private TipoQuarto tipo;
     private BigDecimal preco;
     private boolean isDisponivel;
 
     // Construtor do quarto, que recebe número, tipo e preço e inicializa como disponível
-    public Quarto(String numero, String tipo, BigDecimal preco) {
+    public Quarto(String numero, TipoQuarto tipo, BigDecimal preco) {
         this.numero = numero;
         this.tipo = tipo;
         this.preco = preco;
@@ -20,7 +20,7 @@ public class Quarto {
         return numero;
     }
 
-    public String getTipo() {
+    public TipoQuarto getTipo() {
         return tipo;
     }
 
@@ -36,7 +36,7 @@ public class Quarto {
         this.numero = numero;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoQuarto tipo) {
         this.tipo = tipo;
     }
 
