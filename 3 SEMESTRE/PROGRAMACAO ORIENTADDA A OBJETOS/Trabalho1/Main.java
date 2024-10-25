@@ -7,7 +7,7 @@ public class Main {
         int opcao;
 
         do {
-            System.out.println("4===== Menu Principal =====");
+            System.out.println("===== Menu Principal =====");
             System.out.println("1. Adicionar Novo Hotel");
             System.out.println("2. Listar Todos os Hotéis");
             System.out.println("3. Adicionar Quarto a um Hotel");

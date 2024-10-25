@@ -40,10 +40,15 @@ public class Hotel{
     }
     
     public void listarQuartosDisponiveis(){
+        int disponiveis = 0;
         for (Quarto quarto : listaDeQuartos) {
             if (quarto.isDisponivel()){
                 System.out.println(quarto.toString());
+                disponiveis++;
             }
+        }
+        if (disponiveis == 0){
+            System.out.println("Não há quartos disponíveis.");
         }
     }
 

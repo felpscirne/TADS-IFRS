@@ -114,6 +114,7 @@ public class SistemaReserva {
 
     // Faz uma reserva de um quarto para um cliente, caso o hotel e o quarto existam. Caso o cliente não exista, ele é cadastrado.
     public void fazerReserva() {
+
         System.out.println("Digite o nome do cliente: ");
         String nomeCliente = scanner.nextLine();
 
