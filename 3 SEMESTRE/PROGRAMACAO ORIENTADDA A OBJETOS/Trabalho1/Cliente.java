@@ -1,3 +1,4 @@
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +9,6 @@ public class Cliente {
     private String telefone;
     private List<Reserva> reservas;
     
-
 // Construtor do cliente, que recebe nome, email, telefone e inicializa a lista de reservas
     public Cliente(String nome, String email, String telefone) {
         this.nome = nome;
@@ -37,5 +37,13 @@ public class Cliente {
         reserva.cancelarReserva(reserva);
     }
 
+// Método que lista as reservas do cliente, formatando a data
+    public void listarReservas(DateTimeFormatter formatter) {
+        System.out.println("Reservas de " + nome + ":");
+
+        for (Reserva reserva : reservas) {
+            System.out.println(reserva.toString());
+        }
+    }
 }
 
