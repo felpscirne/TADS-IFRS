@@ -8,7 +8,8 @@ let btnPular = document.getElementById("btnPular");
 let gameOverElement = document.getElementById("game-over");
 let gameOverScoreElement = document.getElementById("scoreFinal");
 let rules = document.getElementById("rules");
-let rulesButton = document.getElementById("rulesButton");
+let btnRules = document.getElementById("btnRegras");
+let btnCloseRules = document.getElementById("btnVoltar");
 
 let backgroundMusic = new Audio("sounds/background.mp3");
 let gameOverSound = new Audio("sounds/gameover.mp3");
@@ -29,6 +30,7 @@ backgroundMusic.volume = 0.2;
 btnIniciar.addEventListener("click", startGame);
 btnReiniciar.addEventListener("click", resetGame);
 btnRules.addEventListener("click", showRules);
+btnCloseRules.addEventListener("click", hideRules);
 
 function startGame() {
     if (gameRunning) return; // Evita iniciar o jogo se já estiver rodando
@@ -157,4 +159,12 @@ function showRules() {
     gameOverElement.style.display = "none";
     gameOverScoreElement.style.display = "none";
     rules.style.display = "block";
+    btnCloseRules.style.display = "block";
+}
+
+function hideRules() {
+    rules.style.display = "none";
+    btnCloseRules.style.display = "none";
+    gameOverElement.style.display = "block";
+    gameOverScoreElement.style.display = "block";
 }
