@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/ant.png">
+    <title>Pule Tamanduas</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    </head>
+<body>
+    <div id="game-container">
+        <div id="dino"></div>
+        <div id="cactus"></div>
+        <div id="scoreboard">
+            <p>Pontos: <span id="score">0</span></p>
+            <p>Recorde: <span id="high-score">0</span></p>
+        </div>
+        <div id = "rules">
+            <h1>Sobreviva aos Tamanduas</h1>
+            <p>Pressione o botão pular para pular, você pode ainda usar o direcional para cima.</p><br>
+            <p>Pressione o botão iniciar para começar o jogo.</p><br>
+            <p><b>CUIDADO: O JOGO FICA MAIS DIFICIL COM O TEMPO</b></p>
+        </div>
+        <div id = "game-over">
+            <h1>Fim de Jogo</h1>
+            <p>Pontuação: <span id="scoreFinal">0</span></p>
+            <button id="btnReiniciar">Jogar Novamente</button>
+        </div>
+        <div id="buttons">
+            <button id="btnIniciar">Iniciar</button>
+            <button id="btnPular">Pular</button>
+            <button id="rulesButton">Regras</button>
+        </div>
+    </div>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
